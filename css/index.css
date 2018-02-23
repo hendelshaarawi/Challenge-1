@@ -1,0 +1,247 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+* {
+	font-family: 'Nunito', 'sans-serif';
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+body {
+	background-color: #181C1F;
+}
+
+
+div.titel h1 {
+	text-align: center;
+	font-size: 5em;
+	color: red;
+
+}
+
+div div.wrapper {
+	color: white;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	grid-template-areas: "weather time"
+						 "speedgraph speedgraph"
+						 "gravity water"
+
+}
+
+div div.wrapper section {
+	background-color: #222A36;	
+}
+div div.wrapper section.weather {
+	grid-area: weather;
+
+}
+
+div div.wrapper section.time {
+	grid-area: time;
+}
+
+div div.wrapper section.speedgraph {
+	grid-area: speedgraph;
+}
+
+div div.wrapper section.gravity {
+	grid-area: gravity;
+}
+
+div div.wrapper section.water {
+	grid-area: water;
+}
+
+p {
+	font-size: 3.3em;
+}
+
+
+/*-----WEATHER-----*/
+
+
+span#city {
+	font-size: 80%;
+}
+
+div.wrapper section.weather div.weatherwrapper {
+	width: 90%;
+	margin: 0 auto;
+	color: #56CCF2;
+	overflow: auto;
+}
+
+
+div.wrapper section.weather #weatherbox {
+  color: #56CCF2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  bottom: 5vw;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+div.wrapper section.weather #topbox {
+  border-bottom: 1px #56CCF2 solid;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+div.wrapper section.weather #middlebox {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.wrapper section.weather #midmid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.wrapper section.weather #bottombox {
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.wrapper section.weather .bottomsides {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.wrapper section.weather .wi {
+  width: 100%;
+  font-size: 1.8em;
+  color: #56CCF2;
+}
+
+div.wrapper section.weather button {
+  color: #56CCF2;
+  outline: none;
+}
+
+div.wrapper section.weather #temp {
+  font-size: 2em;
+  padding-left: 10px;
+}
+
+div.wrapper section.weather .fc {
+  border: none;
+  border-radius: 50%;
+  font-size: .7em;
+  height: 1.5em;
+  width: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  padding: 0px;
+}
+
+div.wrapper section.weather .fc:hover {
+  color: #56CCF2;
+  border: 1px solid #56CCF2;
+}
+
+/*-----END WEATHER-----*/
+
+
+/*-----TIME-----*/
+
+div.wrapper section.time div#clock {
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+}
+div.wrapper section.time div#clock .time {
+        letter-spacing: 0.05em;
+        font-size: 80px;
+        padding: 5px 0;
+}
+div.wrapper section.time div#clock .date {
+        letter-spacing: 0.1em;
+        font-size: 24px;
+}
+div.wrapper section.time div#clock .text {
+        letter-spacing: 0.1em;
+        font-size: 12px;
+        padding: 20px 0 0;
+    }
+
+
+/*-----END TIME-----*/
+
+
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+
+div div.wrapper {
+	grid-gap: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1024px) {
+	div div.wrapper {
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+	grid-template-areas: "weather time gravity"
+						 "speedgraph speedgraph water"
+
+}
+}
+
+
+
+@media only screen and (min-width: 1050px) {
+	div.wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+
+}
+
+
+
+
+
+
+

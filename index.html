@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<meta charset="utf-8"/>
+	<link href="css/index.css" type="text/css" rel="stylesheet" />
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+
+    <script src="js/test.js"></script>
+</head>
+<body>
+	<div>
+		<div class="titel">
+			<h1>Dashboard</h1>
+		</div>
+
+		<div class="wrapper">
+
+				<section class="weather">
+					<div class="weatherwrapper">
+
+						<div id="weatherbox">
+	     					 <div id="topbox">
+	        					<span id="city"></span>
+	      					</div>
+
+	      					<div id="middlebox">
+	        					<div id="midmid">
+	          						<span><i id="currenticon"></i></span>
+	          						<span id="temp"></span>
+	         						<button class="fc">F</button>
+	        					</div>
+	        					<span id="desc"></span>
+	     	 				</div>
+
+	     	 				<div id="bottombox">
+	        					<div class="bottomsides">
+	          						<span><i class="wi wi-raindrop"></i></span>
+	          						<span id="hum"></span>
+	        					</div>
+
+	        					<div class="bottomsides">
+	          						<span><i class="wi wi-strong-wind"></i></span>
+	          						<span id="wind"></span>
+	        					</div>
+	     					</div>
+		     			</div>
+
+		     		</div>	
+				</section>
+
+
+
+				<section class="time">	
+					<div id="clock">
+					    <p class="date">{{ date }}</p>
+					    <p class="time">{{ time }}</p>
+					</div>	
+				</section>
+
+
+					<section class="speedgraph">
+						<p>SPEEDGRAPH</p>
+					</section>
+
+
+					<section class="gravity">
+						<p>GRAVITY</p>
+					</section>
+
+
+					<section class="water">
+						<div class="waterwrapper">
+  
+  
+						</div>
+					</section>
+		</div>
+	</div>
+
+</body>
+</html>
