@@ -160,7 +160,8 @@ div.wrapper section.food .chart--horiz {
 div.wrapper section.food .chart__bar {
   height: 30px;
   margin-bottom: 10px;
-  background: linear-gradient(to left, #4cb8c4, #3cd3ad);
+  /*background: linear-gradient(to left, #4cb8c4, #3cd3ad);*/
+  background: linear-gradient(to left, rgba(10, 175, 230, 1), #599eb7);
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   opacity: 0;
@@ -242,7 +243,6 @@ div.wrapper section.food .chart__label {
 /*-----TIME-----*/
 
 div.wrapper section.time div#clock {
-	margin: 2em;
     color: #ffffff;
     text-align: center;
 	    color: #daf6ff;
@@ -279,7 +279,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: .2em;
   border-bottom: 1px solid #344454;
-  width: 40%;
+  width: 100%;
   margin: 3% auto;
 }
 
@@ -435,9 +435,7 @@ div div.wrapper {
 
 }
 
-body {
-	background-color: red;
-}
+
 
 div div.wrapper section:nth-child(1) {
 	height: 335px;
@@ -450,8 +448,6 @@ div.wrapper section.food .foodleft {
 div.wrapper section.food .lines {
   height: 85%;
 }
-
-
 
 
 }
@@ -474,10 +470,16 @@ div.wrapper section.food .lines {
 
 @media only screen and (min-width: 1050px) {
 	div.wrapper {
-		width: 90%;
+		width: 70%;
 		margin: 0 auto;
 	}
 
+
+	div.wrapper section.time div#clock .time {
+    font-size: 4.5em;
+}
+    div.wrapper section.time div#clock .date {
+    font-size: 1.8em;
 
 }
 
