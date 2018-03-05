@@ -13,29 +13,24 @@ body {
 }
 
 
-div.titel h1 {
-	text-align: center;
-	font-size: 5em;
-	color: red;
 
-}
 
 div div.wrapper {
 	color: white;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 10px;
-	grid-template-areas: "weather time"
-						 "speedgraph speedgraph"
-						 "gravity water"
+	grid-template-areas: "time speed"
+						 "food food"
+						 "converter water"
 
 }
 
 div div.wrapper section {
 	background-color: #222A36;	
 }
-div div.wrapper section.weather {
-	grid-area: weather;
+div div.wrapper section.food {
+	grid-area: food;
 
 }
 
@@ -43,162 +38,393 @@ div div.wrapper section.time {
 	grid-area: time;
 }
 
-div div.wrapper section.speedgraph {
-	grid-area: speedgraph;
+div div.wrapper section.converter {
+	grid-area: converter;
 }
 
-div div.wrapper section.gravity {
-	grid-area: gravity;
+div div.wrapper section.speed {
+	grid-area: speed;
 }
 
 div div.wrapper section.water {
 	grid-area: water;
 }
 
-p {
+div.wrapper div.time p {
 	font-size: 3.3em;
 }
 
 
-/*-----WEATHER-----*/
 
 
-span#city {
-	font-size: 80%;
+
+
+
+/*-----FOOD-----*/
+
+div div.wrapper section:nth-child(1) {
+	height: 300px;
 }
 
-div.wrapper section.weather div.weatherwrapper {
-	width: 90%;
-	margin: 0 auto;
-	color: #56CCF2;
-	overflow: auto;
+div.wrapper section.food .foodleft {
+	height: 250px;
 }
 
 
-div.wrapper section.weather #weatherbox {
-  color: #56CCF2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  bottom: 5vw;
-  max-width: 100%;
-  max-height: 100%;
-  overflow: auto;
+
+
+div.wrapper section.food .foodleft {
   width: 80%;
+  max-width: 80%;
+  height: 480px;
   margin: 0 auto;
+  position: relative;
 }
 
-
-div.wrapper section.weather #topbox {
-  border-bottom: 1px #56CCF2 solid;
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.3em;
+div.wrapper section.food .lines {
+  height: 65%;
+  position: relative;
+  list-style: none;
 }
 
-div.wrapper section.weather #middlebox {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+div.wrapper section.food .line {
+  height: inherit;
+  width: 2px;
+  margin-top: 15%;
+  position: absolute;
+  background: rgba(238, 238, 238, 0.6);
+}
+div.wrapper section.food .line.l--0 {
+  left: 0;
+}
+div.wrapper section.food .line.l--25 {
+  left: 25%;
+}
+div.wrapper section.food .line.l--50 {
+  left: 50%;
+}
+div.wrapper section.food .line.l--75 {
+  left: 75%;
+}
+div.wrapper section.food .line.l--100 {
+  left: calc(100% - 1px);
 }
 
-div.wrapper section.weather #midmid {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-div.wrapper section.weather #bottombox {
-  height: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-div.wrapper section.weather .bottomsides {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-div.wrapper section.weather .wi {
-  width: 100%;
-  font-size: 1.8em;
-  color: #56CCF2;
-}
-
-div.wrapper section.weather button {
-  color: #56CCF2;
-  outline: none;
-}
-
-div.wrapper section.weather #temp {
-  font-size: 2em;
-  padding-left: 10px;
-}
-
-div.wrapper section.weather .fc {
-  border: none;
-  border-radius: 50%;
-  font-size: .7em;
-  height: 1.5em;
-  width: 1.5em;
+div.wrapper section.food .line__label {
+  display: block;
+  width: 100px;
   text-align: center;
-  text-decoration: none;
-  background: none;
-  cursor: pointer;
-  padding: 0px;
+  position: absolute;
+  bottom: -20px;
+  right: -50px;
+}
+div.wrapper section.food .line__label.title {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-div.wrapper section.weather .fc:hover {
-  color: #56CCF2;
-  border: 1px solid #56CCF2;
+div.wrapper section.food .charts {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
-/*-----END WEATHER-----*/
+div.wrapper section.food .chart {
+  margin: 30px 0 0;
+}
+div.wrapper section.food .chart:first-child {
+  margin: 0;
+}
+
+div.wrapper section.food .chart__title {
+  display: block;
+  margin: 0 0 10px;
+  font-weight: bold;
+  opacity: 0;
+  animation: 1s anim-lightspeed-in ease forwards;
+}
+div.wrapper section.food .chart--prod .chart__title {
+  animation-delay: 3.3s;
+}
+div.wrapper section.food .chart--design .chart__title {
+  animation-delay: 4.5s;
+}
+
+div.wrapper section.food .chart--horiz {
+  overflow: hidden;
+}
+
+div.wrapper section.food .chart__bar {
+  height: 30px;
+  margin-bottom: 10px;
+  background: linear-gradient(to left, #4cb8c4, #3cd3ad);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  opacity: 0;
+  animation: 1s anim-lightspeed-in ease forwards;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(11) {
+  animation-delay: 2.7s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(10) {
+  animation-delay: 2.5s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(9) {
+  animation-delay: 2.3s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(8) {
+  animation-delay: 2.1s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(7) {
+  animation-delay: 1.9s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(6) {
+  animation-delay: 1.7s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(5) {
+  animation-delay: 1.5s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(4) {
+  animation-delay: 1.3s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(3) {
+  animation-delay: 1.1s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(2) {
+  animation-delay: 0.9s;
+}
+div.wrapper section.food .chart--dev .chart__bar:nth-of-type(1) {
+  animation-delay: 0.7s;
+}
+div.wrapper section.food .chart--prod .chart__bar:nth-of-type(2) {
+  animation-delay: 4.2s;
+}
+div.wrapper section.food .chart--prod .chart__bar:nth-of-type(1) {
+  animation-delay: 4s;
+}
+div.wrapper section.food .chart--design .chart__bar:nth-of-type(3) {
+  animation-delay: 5.6s;
+}
+div.wrapper section.food .chart--design .chart__bar:nth-of-type(2) {
+  animation-delay: 5.4s;
+}
+div.wrapper section.food .chart--design .chart__bar:nth-of-type(1) {
+  animation-delay: 5.2s;
+}
+
+div.wrapper section.food .chart__label {
+  padding-left: 10px;
+  line-height: 30px;
+  color: white;
+}
+
+@keyframes anim-lightspeed-in {
+  0% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/*END FOOD*/
+
+
+
 
 
 /*-----TIME-----*/
 
 div.wrapper section.time div#clock {
+	margin: 2em;
     color: #ffffff;
     text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: #daf6ff;
-    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+	    color: #daf6ff;
+	    text-shadow: 0 0 2px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
 }
 div.wrapper section.time div#clock .time {
         letter-spacing: 0.05em;
-        font-size: 80px;
+        font-size: 3.3em;
         padding: 5px 0;
 }
 div.wrapper section.time div#clock .date {
         letter-spacing: 0.1em;
-        font-size: 24px;
+        font-size: 1.3em;
 }
-div.wrapper section.time div#clock .text {
-        letter-spacing: 0.1em;
-        font-size: 12px;
-        padding: 20px 0 0;
-    }
 
 
 /*-----END TIME-----*/
 
 
+/*-----CONVERTER-----*/
+
+h1 {
+  color: #daf6ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 3em;
+}
 
 
+h2 {
+  color: #daf6ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  border-bottom: 1px solid #344454;
+  width: 40%;
+  margin: 3% auto;
+}
+
+div.wrapper section.converter .converter-wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+div.wrapper section.converter .converter-wrapper input {
+  font-size: 1.3em;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+  box-sizing: border-box;
+  color: black;
+  background-color: white;
+  text-shadow: none;
+}
+
+div.wrapper section.converter .converter-wrapper span {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+div.wrapper section.converter .converter-wrapper span select {
+  background-color: #344454;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  border-radius: 0px;
+  font-size: 1em;
+  text-overflow: '';
+  -webkit-appearance: none; /* hide default arrow in chrome OSX */
+}
+
+div.wrapper section.converter .converter-wrapper span::before,
+.converter-wrapper span::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+div.wrapper section.converter .converter-wrapper span::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.5em;
+  top: 50%;
+  margin-top: -.5em;
+  color: white;
+}
+
+div.wrapper section.converter .converter-wrapper span::before { /*  Custom dropdown arrow cover */
+  width: 2.5em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0;
+  background-color: #151f28;
+}
+
+div.wrapper section.converter .converter-side-a,
+.converter-side-b {
+  float: left;
+  margin-top: 10px;
+  box-sizing: border-box;
+  width: 45%;
+}
+
+div.wrapper section.converter .converter-equals {
+  float: left;
+  box-sizing: border-box;
+  width: 10%;
+  color: #daf6ff;
+  font-weight: 500;
+  font-size: 2.4em;
+  line-height: 0;
+  text-align: center;
+}
+
+div.wrapper section.converter .converter-side-a {
+  padding-right: 10px;
+}
+
+div.wrapper section.converter .converter-side-b {
+  padding-left: 10px;
+}
+
+div.wrapper section.converter div p.equals {
+	color: white;
+	font-size: 1em;
+	margin-top: 75%; 
+}
+
+div.wrapper section.converter div.map {
+	display: flex;
+	flex-direction: row;
+}
+
+
+/*-----END CONVERTER-----*/
+
+
+
+/*-----SPEED-----*/
+div.wrapper section.speed .gauge-container {
+	width: 90%;
+  	margin: 0 auto;
+}
+div.wrapper section.speed .gauge-container > .gauge > .value-text {
+  	fill: rgb(47, 227, 255);
+  	font-size: 0.8em;
+  	color: #daf6ff;
+  	text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+}
+
+div.wrapper section.speed .gauge-container.three > .gauge > .dial {
+  	stroke: #334455;
+  	stroke-width: 2;
+}
+div.wrapper section.speed .gauge-container.three > .gauge > .value {
+  	stroke: #56CCF2;
+	text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+  	stroke-width: 3;
+}
+div.wrapper section.speed .gauge-container.three > .gauge > .value-text {
+  	fill: white;
+  	text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+  	stroke-width: 3;
+  
+} 
+
+
+
+
+
+/*-----END SPEED-----*/
 
 
 
@@ -209,10 +435,26 @@ div div.wrapper {
 
 }
 
+body {
+	background-color: yellow;
+}
+
+div div.wrapper section:nth-child(1) {
+	height: 335px;
+}
+
+div.wrapper section.food .foodleft {
+	height: 275px;
+}
+
+div.wrapper section.food .lines {
+  height: 85%;
+}
 
 
 
 
+}
 
 
 
@@ -222,8 +464,8 @@ div div.wrapper {
 	div div.wrapper {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
-	grid-template-areas: "weather time gravity"
-						 "speedgraph speedgraph water"
+	grid-template-areas: "time speed  converter"
+						 "food food water"
 
 }
 }
