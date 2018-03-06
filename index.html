@@ -3,17 +3,21 @@
 <head>
 	<title>Dashboard</title>
 	<meta charset="utf-8"/>
+
 	<link href="css/index.css" type="text/css" rel="stylesheet" />
-	<link href="css/water.css" type="text/css" rel="stylesheet" />
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/converter.js"></script>
+
+
+    
 
 </head>
 <body>
@@ -148,19 +152,26 @@
 					</section>
 
 
-					<section class="water">
-						<div class="waterwrapper">
-						   <div class="green">
-						    <div class="progress">
-						      <div class="inner">
-						        <div class="percent"><span>67</span>%</div>
-						        <div class="water"></div>
-						        <div class="glare"></div>
+
+
+					<section class="wwater">
+						<div class="swrapper">
+  							<canvas id="myChart"></canvas>
+						</div>
+					</section>
+
+				<!-- 	<section class="wwater">
+						<div class="wwaterwrapper">
+						   <div class="ggreen">
+						    <div class="pprogress">
+						      <div class="iinner">
+						        <div class="wwater"></div>
+						        <div class="gglare"></div>
 						      </div>
 						    </div>
 						  </div>  
 						</div>
-					</section>
+					</section> -->
 		</div>
 	</div>
 
@@ -175,6 +186,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
     <script type="text/javascript" src="https://rawgit.com/naikus/svg-gauge/master/dist/gauge.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" ></script>
+    <script src="js/speed.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 
     <script src="js/test.js"></script>
 </body>

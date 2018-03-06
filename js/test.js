@@ -234,4 +234,60 @@ var gauge3 = Gauge(
 
 
 
+//AFSTAND
+
+// Line Chart
+var ctx = document.getElementById('myChart').getContext("2d");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["mon", "tue", "wed", "thu", "fri", "sat"],
+        datasets: [{
+            label: "travelled distance",
+            borderColor: "#56CCF2",
+            pointBorderColor: "#56CCF2",
+            pointBackgroundColor: "#80b6f4",
+            pointHoverBorderColor: "#80b6f4",
+            pointBorderWidth: 3,
+            pointHoverRadius: 3,
+            pointHoverBorderWidth: 1,
+            pointRadius: 3,
+            fill: false,
+            borderWidth: 2,
+            data: [103, 120, 160, 150, 180, 170, 160]
+        }]
+    },
+    options: {
+        legend: {
+            position: "bottom"
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    fontColor: "#1f253d",
+                    beginAtZero: true,
+                    maxTicksLimit: 5,
+                    padding: 20
+                },
+                gridLines: {
+                    drawTicks: false,
+                    display: false
+                }
+
+            }],
+            xAxes: [{
+                gridLines: {
+                    zeroLineColor: "transparent"
+                },
+                ticks: {
+                    padding: 20,
+                    fontColor: "#1f253d",
+                }
+            }]
+        }
+    }
+});
+
+
 

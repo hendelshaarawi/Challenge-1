@@ -9,25 +9,34 @@
 }
 
 body {
-	background-color: #181C1F;
+	background-color: #1f253d;
 }
 
 
+div div.titel {
+	width: 100%;
+}
+ 
+div div.titel h1 {
+	margin: 0 auto;
 
+}
 
 div div.wrapper {
 	color: white;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	grid-gap: 10px;
-	grid-template-areas: "time speed"
-						 "food food"
-						 "converter water"
+	grid-template-areas: "time"
+						"speed"
+						 "food"
+						 "converter" 
+						 "water"
 
 }
 
 div div.wrapper section {
-	background-color: #222A36;	
+	background-color: #394264;	
 }
 div div.wrapper section.food {
 	grid-area: food;
@@ -269,7 +278,10 @@ h1 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .2em;
-  font-size: 3em;
+  font-size: 2.3em;
+  width: 100%;
+  margin: 0 auto;
+
 }
 
 
@@ -310,7 +322,7 @@ div.wrapper section.converter .converter-wrapper span {
 }
 
 div.wrapper section.converter .converter-wrapper span select {
-  background-color: #344454;
+  background-color: #1f253d;
   color: white;
   padding: 10px;
   width: 100%;
@@ -405,7 +417,7 @@ div.wrapper section.speed .gauge-container > .gauge > .value-text {
 }
 
 div.wrapper section.speed .gauge-container.three > .gauge > .dial {
-  	stroke: #334455;
+  	stroke: #1f253d;
   	stroke-width: 2;
 }
 div.wrapper section.speed .gauge-container.three > .gauge > .value {
@@ -426,6 +438,26 @@ div.wrapper section.speed .gauge-container.three > .gauge > .value-text {
 
 /*-----END SPEED-----*/
 
+
+
+/*-----SPEED-----*/
+section.wwater .swrapper{
+  display:block;
+  overflow:hidden;
+  margin:0 auto;
+  background:#fff;
+}
+
+canvas{
+  background: #394264;
+/*  width: 500px;
+  height: 100%;*/
+}
+
+
+
+
+/*-----END SPEED-----*/
 
 
 @media only screen and (min-width: 768px) {
@@ -449,6 +481,16 @@ div.wrapper section.food .lines {
   height: 85%;
 }
 
+div div.wrapper {
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "time speed"
+						 "food food"
+						 "converter water"
+
+}
+
+
+
 
 }
 
@@ -460,15 +502,15 @@ div.wrapper section.food .lines {
 	div div.wrapper {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
-	grid-template-areas: "time speed  converter"
-						 "food food water"
+	grid-template-areas: "time speed water"
+						 "food food converter"
 
 }
 }
 
 
 
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 1450px) {
 	div.wrapper {
 		width: 70%;
 		margin: 0 auto;
