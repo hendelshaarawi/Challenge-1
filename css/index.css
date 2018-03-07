@@ -30,6 +30,7 @@ div div.wrapper {
 	grid-template-areas: "time"
 						"speed"
 						 "food"
+						 "button"
 						 "converter" 
 						 "water"
 
@@ -40,6 +41,12 @@ div div.wrapper section {
 }
 div div.wrapper section.food {
 	grid-area: food;
+
+}
+
+
+div div.wrapper section.button {
+	grid-area: button;
 
 }
 
@@ -244,6 +251,58 @@ div.wrapper section.food .chart__label {
 
 
 /*END FOOD*/
+
+
+/*-----BUTTONS-----*/
+
+div.wrapper section.button div.buttonwrap ul {
+  position: relative;
+  padding: 0;
+  text-align: center;
+}
+
+div.wrapper section.button div.buttonwrap li {
+  display: inline-block;
+  list-style: none;
+  border: 2px solid #0F90C0;
+  cursor: pointer;
+}
+div.wrapper section.button div.buttonwrap li:nth-of-type(1) {
+  border-right: none;
+}
+div.wrapper section.button div.buttonwrap li:nth-of-type(3) {
+  border-radius: 0 3px 3px 0;
+  border-left: none;
+}
+
+div.wrapper section.button div.buttonwrap button {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 8px 12px;
+  letter-spacing: 1px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+div.wrapper section.button div.buttonwrap button:focus {
+  outline: none;
+}
+
+div.wrapper section.button div.buttonwrap .highlight {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 1px;
+  height: 29px;
+  background: #0F90C0;
+  transform-origin: 0;
+}
+
+
+/*-----END BUTTONS-----*/
 
 
 
@@ -507,6 +566,7 @@ div.wrapper section.food .lines {
 div div.wrapper {
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: "time speed"
+						"button speed"
 						 "food food"
 						 "converter water"
 
@@ -526,6 +586,7 @@ div div.wrapper {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
 	grid-template-areas: "time speed converter"
+						 "time speed button"
 						 "food food water"
 
 }
