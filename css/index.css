@@ -441,7 +441,7 @@ div.wrapper section.speed .gauge-container.three > .gauge > .value-text {
 
 
 /*-----SPEED-----*/
-section.wwater .swrapper{
+/*section.wwater .swrapper{
   display:block;
   overflow:hidden;
   margin:0 auto;
@@ -449,10 +449,33 @@ section.wwater .swrapper{
 }
 
 canvas{
-  background: #394264;
+  background: #394264;}*/
 /*  width: 500px;
   height: 100%;*/
+
+
+
+
+
+div.wrapper section.wwater ul {
+	width: 100%;
 }
+
+
+
+div.wrapper section.wwater li {
+  display: inline-block;
+  font-size: 1.1em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+div.wrapper section.wwater li span {
+  display: block;
+  font-size: 3rem;
+}
+
 
 
 
@@ -502,8 +525,8 @@ div div.wrapper {
 	div div.wrapper {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
-	grid-template-areas: "time speed water"
-						 "food food converter"
+	grid-template-areas: "time speed converter"
+						 "food food water"
 
 }
 }
@@ -518,7 +541,7 @@ div div.wrapper {
 
 
 	div.wrapper section.time div#clock .time {
-    font-size: 4.5em;
+    font-size: 3.5em;
 }
     div.wrapper section.time div#clock .date {
     font-size: 1.8em;
