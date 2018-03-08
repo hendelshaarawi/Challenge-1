@@ -191,7 +191,7 @@ window.onload = function(e) {
 }
 
 // Restricting textboxes to accept numbers + navigational keys only
-document.getElementByClass('numbersonly').addEventListener('keydown', function(e) {
+document.getElementsByClassName('numbersonly')[0].addEventListener('keydown', function(e) {
   var key = e.keyCode ? e.keyCode : e.which;
 
   if (!([8, 9, 13, 27, 46, 110, 190].indexOf(key) !== -1 ||

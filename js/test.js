@@ -306,8 +306,8 @@ let countDown = new Date('Aug 21, 2018 00:00:00').getTime(),
 
       document.getElementById('days').innerHTML = Math.floor(distance / (day)),
         document.getElementById('hours').innerHTML = Math.floor((distance % (day)) / (hour)),
-        document.getElementById('minutes').innerHTML = Math.floor((distance % (hour)) / (minute)),
-        document.getElementById('seconds').innerHTML = Math.floor((distance % (minute)) / second);
+        document.getElementById('minutes').innerHTML = Math.floor((distance % (hour)) / (minute))
+       
       
       //do something later when date is reached
       //if (distance < 0) {
@@ -318,43 +318,29 @@ let countDown = new Date('Aug 21, 2018 00:00:00').getTime(),
     }, second)
 
 
-    //BUTTON
+   //BUTTON
 
-    ////////////////////////////////
-// Highlight Buttons
-var $highlight = $('.highlight');
-
-function translate(obj) {
-  
-    var $this    = obj.addClass('active'),
-        width    = $this.width(),
-        margin   = $this.outerWidth(true) - $this.outerWidth(),
-        position = $this.offset().left + margin/2;
-
-    $highlight.css({
-        width: parseInt(width) + 'px',
-        transform: 'translate(' + parseInt(position) + 'px' + ')'
-    });
-}
-
-// add transition after page load
-$(window).on('load resize', function() {
-    
-    // wait a little bit to add transition so we don't see on page load
-    setTimeout(function() {
-        $highlight.css({
-            transition: 'all .5s'
-        });
-    }, 100);
-
-    // load highlight on active control
-  translate($('li:first-child'));
+$(document).ready(function() {
+  $('li a').on('click', function() {
+    $(this).toggleClass('active');
+  });
 });
 
-// switch to active control on click
-$('li:not(.highlight)').on('click', function() {
-  
-  $('li').removeClass('active');
-  translate($(this));
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
